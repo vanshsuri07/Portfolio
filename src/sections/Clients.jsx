@@ -1,18 +1,20 @@
 import { useState, useEffect, useRef } from "react";
-import { clientReviews } from "../constants/index.js";
+import { clientReviews } from "../constants";
 
 const TestimonialCard = ({ item }) => (
-  <div className="flex-shrink-0 w-[420px] mx-4 perspective-1000">
+  <div className="flex-shrink-0 w-[340px] sm:w-[380px] md:w-[420px] mx-3 sm:mx-4 perspective-1000">
     <div
-      className="group relative bg-gradient-to-br from-gray-900 via-gray-900 to-black border border-gray-800 rounded-3xl p-8 transition-all duration-500 hover:border-blue-500/50 hover:shadow-2xl hover:shadow-blue-500/20 h-full overflow-hidden"
+      className="group relative bg-gradient-to-br from-gray-900 via-gray-900 to-black border border-gray-800 rounded-2xl sm:rounded-3xl p-6 sm:p-8 transition-all duration-500 hover:border-blue-500/50 hover:shadow-2xl hover:shadow-blue-500/20 h-full overflow-hidden"
       style={{
         transformStyle: "preserve-3d",
         transition:
           "transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.5s ease, border 0.5s ease",
       }}
       onMouseEnter={(e) => {
-        e.currentTarget.style.transform =
-          "translateY(-12px) rotateX(8deg) rotateY(8deg) scale(1.02)";
+        if (window.innerWidth >= 768) {
+          e.currentTarget.style.transform =
+            "translateY(-12px) rotateX(8deg) rotateY(8deg) scale(1.02)";
+        }
       }}
       onMouseLeave={(e) => {
         e.currentTarget.style.transform =
@@ -25,14 +27,14 @@ const TestimonialCard = ({ item }) => (
       </div>
 
       {/* Glow effect on hover */}
-      <div className="absolute -inset-1 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 rounded-3xl opacity-0 group-hover:opacity-20 blur-xl transition-opacity duration-500"></div>
+      <div className="absolute -inset-1 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 rounded-2xl sm:rounded-3xl opacity-0 group-hover:opacity-20 blur-xl transition-opacity duration-500"></div>
 
       {/* Content */}
       <div className="relative z-10">
         {/* Quote icon */}
-        <div className="mb-4 opacity-30">
+        <div className="mb-3 sm:mb-4 opacity-30">
           <svg
-            className="w-10 h-10 text-blue-400"
+            className="w-8 h-8 sm:w-10 sm:h-10 text-blue-400"
             fill="currentColor"
             viewBox="0 0 24 24"
           >
@@ -41,31 +43,33 @@ const TestimonialCard = ({ item }) => (
         </div>
 
         {/* Review Text */}
-        <p className="text-gray-300 text-lg leading-relaxed mb-8 min-h-[120px] font-light">
+        <p className="text-gray-300 text-base sm:text-lg leading-relaxed mb-6 sm:mb-8 min-h-[100px] sm:min-h-[120px] font-light">
           {item.review}
         </p>
 
         {/* Divider */}
-        <div className="h-px bg-gradient-to-r from-transparent via-gray-700 to-transparent mb-6"></div>
+        <div className="h-px bg-gradient-to-r from-transparent via-gray-700 to-transparent mb-4 sm:mb-6"></div>
 
         {/* Footer with User Info and Stars */}
-        <div className="flex items-end justify-between">
+        <div className="flex items-end justify-between flex-wrap gap-3">
           {/* User Info */}
-          <div className="flex items-center gap-4">
+          <div className="flex items-center gap-3 sm:gap-4">
             <div className="relative">
               <img
                 src={item.img}
                 alt={item.name}
-                className="w-14 h-14 rounded-full border-2 border-gray-700 group-hover:border-blue-500 transition-all duration-300"
+                className="w-12 h-12 sm:w-14 sm:h-14 rounded-full border-2 border-gray-700 group-hover:border-blue-500 transition-all duration-300"
               />
               {/* Online indicator */}
-              <div className="absolute bottom-0 right-0 w-4 h-4 bg-green-500 rounded-full border-2 border-gray-900"></div>
+              <div className="absolute bottom-0 right-0 w-3 h-3 sm:w-4 sm:h-4 bg-green-500 rounded-full border-2 border-gray-900"></div>
             </div>
             <div>
               <div className="flex items-center gap-2 mb-1">
-                <p className="text-white font-semibold text-lg">{item.name}</p>
+                <p className="text-white font-semibold text-base sm:text-lg">
+                  {item.name}
+                </p>
                 <svg
-                  className="w-5 h-5 text-blue-400"
+                  className="w-4 h-4 sm:w-5 sm:h-5 text-blue-400"
                   fill="currentColor"
                   viewBox="0 0 20 20"
                 >
@@ -76,7 +80,7 @@ const TestimonialCard = ({ item }) => (
                   />
                 </svg>
               </div>
-              <p className="text-gray-400 text-sm font-medium">
+              <p className="text-gray-400 text-xs sm:text-sm font-medium">
                 {item.position}
               </p>
             </div>
@@ -87,7 +91,7 @@ const TestimonialCard = ({ item }) => (
             {[...Array(5)].map((_, index) => (
               <svg
                 key={index}
-                className="w-5 h-5 text-yellow-400 drop-shadow-lg"
+                className="w-4 h-4 sm:w-5 sm:h-5 text-yellow-400 drop-shadow-lg"
                 fill="currentColor"
                 viewBox="0 0 20 20"
               >
@@ -99,8 +103,8 @@ const TestimonialCard = ({ item }) => (
       </div>
 
       {/* Corner accent */}
-      <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-bl from-blue-500/10 to-transparent rounded-3xl"></div>
-      <div className="absolute bottom-0 left-0 w-32 h-32 bg-gradient-to-tr from-purple-500/10 to-transparent rounded-3xl"></div>
+      <div className="absolute top-0 right-0 w-24 h-24 sm:w-32 sm:h-32 bg-gradient-to-bl from-blue-500/10 to-transparent rounded-2xl sm:rounded-3xl"></div>
+      <div className="absolute bottom-0 left-0 w-24 h-24 sm:w-32 sm:h-32 bg-gradient-to-tr from-purple-500/10 to-transparent rounded-2xl sm:rounded-3xl"></div>
     </div>
   </div>
 );
@@ -149,19 +153,24 @@ const Clients = () => {
   }, [isPaused]);
 
   return (
-    <section className="c-space my-20 bg-black py-24" id="clients">
-      <div className="max-w-7xl mx-auto px-4">
+    <section
+      className="c-space my-12 sm:my-20 bg-black py-16 sm:py-24"
+      id="clients"
+    >
+      <div className="max-w-7xl mx-auto px-3 sm:px-4">
         {/* Header */}
-        <div className="text-center mb-16">
-          <h3 className="text-5xl md:text-6xl font-bold text-white mb-4 bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
+        <div className="text-center mb-10 sm:mb-16">
+          <h3 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-3 sm:mb-4 bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent px-4">
             Hear from My Clients
           </h3>
-          <p className="text-gray-400 text-lg">Real stories from real people</p>
+          <p className="text-gray-400 text-base sm:text-lg px-4">
+            Real stories from real people
+          </p>
         </div>
 
         {/* Scrolling Container */}
         <div
-          className="relative overflow-hidden py-8"
+          className="relative overflow-hidden py-6 sm:py-8"
           onMouseEnter={() => setIsPaused(true)}
           onMouseLeave={() => setIsPaused(false)}
         >
@@ -175,20 +184,10 @@ const Clients = () => {
             ))}
           </div>
 
-          {/* Enhanced fade overlays */}
-          <div className="absolute top-0 left-0 w-40 h-full bg-gradient-to-r from-black via-black/80 to-transparent pointer-events-none z-10" />
-          <div className="absolute top-0 right-0 w-40 h-full bg-gradient-to-l from-black via-black/80 to-transparent pointer-events-none z-10" />
+          {/* Enhanced fade overlays - hidden on mobile */}
+          <div className="hidden sm:block absolute top-0 left-0 w-40 h-full bg-gradient-to-r from-black via-black/80 to-transparent pointer-events-none z-10" />
+          <div className="hidden sm:block absolute top-0 right-0 w-40 h-full bg-gradient-to-l from-black via-black/80 to-transparent pointer-events-none z-10" />
         </div>
-
-        {/* Pause indicator
-        {isPaused && (
-          <div className="text-center mt-6 animate-pulse">
-            <div className="inline-flex items-center gap-2 bg-gray-900 border border-gray-800 rounded-full px-6 py-2">
-              <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
-              <p className="text-gray-400 text-sm font-medium">Paused</p>
-            </div>
-          </div>
-        )} */}
       </div>
     </section>
   );
