@@ -15,19 +15,20 @@ const experiences = [
       "Improved application performance by 40% through optimization techniques",
     ],
   },
-  // {
-  //   title: "Frontend Developer",
-  //   company_name: "Digital Agency",
-  //   icon: "https://api.dicebear.com/7.x/shapes/svg?seed=agency",
-  //   iconBg: "#ec4899",
-  //   date: "Jun 2020 - Dec 2021",
-  //   points: [
-  //     "Built responsive websites and landing pages for various clients",
-  //     "Worked with design team to implement pixel-perfect interfaces",
-  //     "Optimized website performance and SEO rankings",
-  //     "Managed version control using Git and collaborated via GitHub",
-  //   ],
-  // },
+  {
+    title: "Full Stack Developer",
+    company_name: "Infosys Virtual 6.0",
+    icon: "https://api.dicebear.com/7.x/shapes/svg?seed=agency",
+    iconBg: "#ec4899",
+    date: "Oct 2025 - Dec 2025",
+    points: [
+      "Contributed to building HelpHiere, a MERN-stack task marketplace where users can post tasks and others can complete them",
+      "Developed RESTful APIs using Node.js and Express for task creation, user actions, and data handling",
+      "Implemented backend logic, routing, and database interactions to support core platform functionality",
+      "Collaborated with team members using Git and GitHub with a multi-branch workflow.",
+      "Participated in feature development, debugging, and integration with the frontend application.",
+    ],
+  },
 ];
 
 const ExperienceCard = ({ experience, index, isActive, setActive }) => {
