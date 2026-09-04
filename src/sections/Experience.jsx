@@ -7,7 +7,7 @@ const experiences = [
     company_name: "GNCIPL",
     icon: "https://api.dicebear.com/7.x/shapes/svg?seed=startup",
     iconBg: "#8b5cf6",
-    date: "Aug 2025 - Oct 2025",
+    date: "Jan 2025 - Oct 2025",
     points: [
       "Developed and maintained web applications using React, Node.js, and MongoDB",
       "Designed and implemented RESTful APIs and microservices architecture",
@@ -17,10 +17,10 @@ const experiences = [
   },
   {
     title: "Full Stack Developer",
-    company_name: "Infosys Virtual 6.0",
+    company_name: "Infosys Springboard 6.0",
     icon: "https://api.dicebear.com/7.x/shapes/svg?seed=agency",
     iconBg: "#ec4899",
-    date: "Oct 2025 - Dec 2025",
+    date: "Nov 2025 - Feb 2026",
     points: [
       "Contributed to building HelpHiere, a MERN-stack task marketplace where users can post tasks and others can complete them",
       "Developed RESTful APIs using Node.js and Express for task creation, user actions, and data handling",
