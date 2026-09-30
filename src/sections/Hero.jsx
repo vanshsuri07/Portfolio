@@ -1,7 +1,13 @@
 import React from "react";
+import { useMediaQuery } from "react-responsive";
 import LiquidEther from "../components/LiquidEther";
 import TextType from "../components/TextType";
+
 const Hero = () => {
+  const isSmall = useMediaQuery({ maxWidth: 440 });
+  const isMobile = useMediaQuery({ maxWidth: 768 });
+  const isTablet = useMediaQuery({ minWidth: 768, maxWidth: 1024 });
+
   return (
     <section className="" id="home">
       <div
@@ -11,13 +17,13 @@ const Hero = () => {
         {/* Liquid Background */}
         <LiquidEther
           colors={["#5227FF", "#FF9FFC", "#B19EEF"]}
-          mouseForce={60}
-          cursorSize={130}
+          mouseForce={isMobile ? 30 : 60}
+          cursorSize={isMobile ? 70 : 130}
           isViscous={false}
           viscous={15}
           iterationsViscous={16}
           iterationsPoisson={16}
-          resolution={0.5}
+          resolution={isSmall ? 0.3 : isMobile ? 0.4 : 0.5}
           isBounce={false}
           dt={0.014}
           BFECC={false}

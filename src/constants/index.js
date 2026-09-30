@@ -138,6 +138,22 @@ export const myProjects = [
       { id: 6, name: "TailwindCSS", path: "/assets/tailwindcss.png" },
     ],
   },
+  {
+    title: "ResearchMate - AI",
+    desc: "ResearchMate AI is an intelligent research companion that transforms how scholars and students analyze academic papers. Powered by Retrieval-Augmented Generation (RAG), it extracts key insights, identifies research gaps, and delivers context-grounded answers in seconds.",
+    subdesc:
+      "Built with React, Vite, Flask, FAISS, Sentence-BERT, and Claude AI, ResearchMate AI pairs local vector search with advanced LLM reasoning. Designed for seamless paper analysis, it features automated summaries, citation analysis, and keyword extraction in a responsive interface.",
+    href: "researchmate-ai-two.vercel.app",
+    texture: "/textures/project/project5.mp4",
+    logoType: "sparkles",
+    spotlight: "/assets/spotlight5.png",
+    tags: [
+      { id: 1, name: "React.js", path: "/assets/react.svg" },
+      { id: 2, name: "Python / Flask", path: "/assets/flask-original.svg" },
+      { id: 3, name: "FAISS Vector DB", path: "/assets/faiss-meta-logo.svg" },
+      { id: 4, name: "Generative AI", path: "/assets/genai.svg" },
+    ],
+  },
 ];
 
 export const calculateSizes = (isSmall, isMobile, isTablet) => {
@@ -147,87 +163,30 @@ export const calculateSizes = (isSmall, isMobile, isTablet) => {
     cubePosition: isSmall
       ? [4, -5, 0]
       : isMobile
-      ? [5, -5, 0]
-      : isTablet
-      ? [5, -5, 0]
-      : [9, -5.5, 0],
+        ? [5, -5, 0]
+        : isTablet
+          ? [5, -5, 0]
+          : [9, -5.5, 0],
     reactLogoPosition: isSmall
       ? [3, 4, 0]
       : isMobile
-      ? [5, 4, 0]
-      : isTablet
-      ? [5, 4, 0]
-      : [12, 3, 0],
+        ? [5, 4, 0]
+        : isTablet
+          ? [5, 4, 0]
+          : [12, 3, 0],
     ringPosition: isSmall
       ? [-5, 7, 0]
       : isMobile
-      ? [-10, 10, 0]
-      : isTablet
-      ? [-12, 10, 0]
-      : [-24, 10, 0],
+        ? [-10, 10, 0]
+        : isTablet
+          ? [-12, 10, 0]
+          : [-24, 10, 0],
     targetPosition: isSmall
       ? [-5, -10, -10]
       : isMobile
-      ? [-9, -10, -10]
-      : isTablet
-      ? [-11, -7, -10]
-      : [-13, -13, -10],
+        ? [-9, -10, -10]
+        : isTablet
+          ? [-11, -7, -10]
+          : [-13, -13, -10],
   };
 };
-
-const experiences = [
-  {
-    title: "React.js Developer",
-    company_name: "Starbucks",
-
-    iconBg: "#383E56",
-    date: "March 2020 - April 2021",
-    points: [
-      "Developing and maintaining web applications using React.js and other related technologies.",
-      "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-      "Implementing responsive design and ensuring cross-browser compatibility.",
-      "Participating in code reviews and providing constructive feedback to other developers.",
-    ],
-  },
-  {
-    title: "React Native Developer",
-    company_name: "Tesla",
-
-    iconBg: "#E6DEDD",
-    date: "Jan 2021 - Feb 2022",
-    points: [
-      "Developing and maintaining web applications using React.js and other related technologies.",
-      "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-      "Implementing responsive design and ensuring cross-browser compatibility.",
-      "Participating in code reviews and providing constructive feedback to other developers.",
-    ],
-  },
-  {
-    title: "Web Developer",
-    company_name: "Shopify",
-
-    iconBg: "#383E56",
-    date: "Jan 2022 - Jan 2023",
-    points: [
-      "Developing and maintaining web applications using React.js and other related technologies.",
-      "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-      "Implementing responsive design and ensuring cross-browser compatibility.",
-      "Participating in code reviews and providing constructive feedback to other developers.",
-    ],
-  },
-  {
-    title: "Full stack Developer",
-    company_name: "Meta",
-
-    iconBg: "#E6DEDD",
-    date: "Jan 2023 - Present",
-    points: [
-      "Developing and maintaining web applications using React.js and other related technologies.",
-      "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-      "Implementing responsive design and ensuring cross-browser compatibility.",
-      "Participating in code reviews and providing constructive feedback to other developers.",
-    ],
-  },
-];
-
-export { experiences };

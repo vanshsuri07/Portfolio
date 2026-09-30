@@ -3,6 +3,8 @@ import { useGSAP } from "@gsap/react";
 import { Suspense, useState } from "react";
 import { Canvas } from "@react-three/fiber";
 import { Center, OrbitControls } from "@react-three/drei";
+import { Sparkles } from "lucide-react";
+import { useMediaQuery } from "react-responsive";
 
 import { myProjects } from "../constants/index.js";
 import CanvasLoader from "../components/CanvasLoader.jsx";
@@ -12,6 +14,8 @@ const projectCount = myProjects.length;
 
 const Projects = () => {
   const [selectedProjectIndex, setSelectedProjectIndex] = useState(0);
+
+  const isMobile = useMediaQuery({ maxWidth: 768 });
 
   const handleNavigation = (direction) => {
     setSelectedProjectIndex((prevIndex) => {
@@ -27,7 +31,7 @@ const Projects = () => {
     gsap.fromTo(
       `.animatedText`,
       { opacity: 0 },
-      { opacity: 1, duration: 1, stagger: 0.2, ease: "power2.inOut" }
+      { opacity: 1, duration: 1, stagger: 0.2, ease: "power2.inOut" },
     );
   }, [selectedProjectIndex]);
 
@@ -51,11 +55,19 @@ const Projects = () => {
             className="p-3 backdrop-filter backdrop-blur-3xl w-fit rounded-lg"
             style={currentProject.logoStyle}
           >
-            <img
-              className="w-10 h-10 shadow-sm"
-              src={currentProject.logo}
-              alt="logo"
-            />
+            {currentProject.logoType === "sparkles" ? (
+              <div className="w-8 h-8 rounded-lg bg-linear-to-tr from-[#8083ff] to-[#7bd0ff] p-px shadow-[0_0_16px_rgba(128,131,255,0.4)] transition-all">
+                <div className="w-full h-full bg-[#131315] rounded-[7px] flex items-center justify-center">
+                  <Sparkles className="w-4 h-4 text-[#c0c1ff]" />
+                </div>
+              </div>
+            ) : (
+              <img
+                className="w-10 h-10 shadow-sm"
+                src={currentProject.logo}
+                alt="logo"
+              />
+            )}
           </div>
 
           <div className="flex flex-col gap-5 text-white-600 my-5">
@@ -114,7 +126,7 @@ const Projects = () => {
             <directionalLight position={[10, 10, 5]} />
             <Center>
               <Suspense fallback={<CanvasLoader />}>
-                <group scale={2} position={[0, -3, 0]} rotation={[0, -0.1, 0]}>
+                <group scale={isMobile ? 1.5 : 2} position={isMobile ? [0, -2.5, 0] : [0, -3, 0]} rotation={[0, -0.1, 0]}>
                   <DemoComputer texture={currentProject.texture} />
                 </group>
               </Suspense>

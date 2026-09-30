@@ -3,16 +3,15 @@ import { useState } from "react";
 // Mock data - replace with your experiences import
 const experiences = [
   {
-    title: "Full Stack Developer",
-    company_name: "GNCIPL",
-    icon: "https://api.dicebear.com/7.x/shapes/svg?seed=startup",
-    iconBg: "#8b5cf6",
-    date: "Jan 2025 - Oct 2025",
+    title: "Program Director",
+    company_name: "CodGen",
+    icon: "https://api.dicebear.com/7.x/shapes/svg?seed=codgen",
+    iconBg: "#3b82f6",
+    date: "Jan 2026 - Present",
     points: [
-      "Developed and maintained web applications using React, Node.js, and MongoDB",
-      "Designed and implemented RESTful APIs and microservices architecture",
-      "Integrated third-party services and payment gateways",
-      "Improved application performance by 40% through optimization techniques",
+      "Built and manage CodGen's project-based internship platform, overseeing 250+ interns across 6 technology tracks",
+      "Developed web workflows, authentication, payments, and certificate verification for internship operations",
+      "Supported 600+ applications and 140+ project submissions, coordinating project reviews and feedback",
     ],
   },
   {
@@ -20,13 +19,24 @@ const experiences = [
     company_name: "Infosys Springboard 6.0",
     icon: "https://api.dicebear.com/7.x/shapes/svg?seed=agency",
     iconBg: "#ec4899",
-    date: "Nov 2025 - Feb 2026",
+    date: "Nov 2025 - Jan 2026",
     points: [
-      "Contributed to building HelpHiere, a MERN-stack task marketplace where users can post tasks and others can complete them",
-      "Developed RESTful APIs using Node.js and Express for task creation, user actions, and data handling",
-      "Implemented backend logic, routing, and database interactions to support core platform functionality",
-      "Collaborated with team members using Git and GitHub with a multi-branch workflow.",
-      "Participated in feature development, debugging, and integration with the frontend application.",
+      "Built HireHelper, a MERN-stack task marketplace where users post tasks and request to complete others'",
+      "Designed 4 RESTful API route groups (users, tasks, requests, notifications) with Node.js and Express, protected with JWT",
+      "Built an image-upload pipeline with Cloudinary and MongoDB for task attachments",
+      "Collaborated with the team using Git and GitHub with a multi-branch workflow",
+    ],
+  },
+  {
+    title: "Full Stack Developer",
+    company_name: "GNCIPL",
+    icon: "https://api.dicebear.com/7.x/shapes/svg?seed=startup",
+    iconBg: "#8b5cf6",
+    date: "Feb 2025 - Oct 2025",
+    points: [
+      "Delivered weekly full-stack modules covering JWT authentication, RESTful API design, and reusable React components, reviewed by senior mentors",
+      "Built a browser-based graphic design tool with a canvas editor, layer management, CRUD dashboard, and PNG export using React.js and Node.js",
+      "Deployed it to production with Vercel, Render, and MongoDB Atlas",
     ],
   },
 ];

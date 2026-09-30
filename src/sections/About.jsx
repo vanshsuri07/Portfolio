@@ -68,8 +68,8 @@ const ParticleCard = ({
       createParticleElement(
         Math.random() * width,
         Math.random() * height,
-        glowColor
-      )
+        glowColor,
+      ),
     );
     particlesInitialized.current = true;
   }, [particleCount, glowColor]);
@@ -111,7 +111,7 @@ const ParticleCard = ({
         gsap.fromTo(
           clone,
           { scale: 0, opacity: 0 },
-          { scale: 1, opacity: 1, duration: 0.3, ease: "back.out(1.7)" }
+          { scale: 1, opacity: 1, duration: 0.3, ease: "back.out(1.7)" },
         );
 
         gsap.to(clone, {
@@ -226,7 +226,7 @@ const ParticleCard = ({
         Math.hypot(x, y),
         Math.hypot(x - rect.width, y),
         Math.hypot(x, y - rect.height),
-        Math.hypot(x - rect.width, y - rect.height)
+        Math.hypot(x - rect.width, y - rect.height),
       );
 
       const ripple = document.createElement("div");
@@ -256,7 +256,7 @@ const ParticleCard = ({
           duration: 0.8,
           ease: "power2.out",
           onComplete: () => ripple.remove(),
-        }
+        },
       );
     };
 
@@ -393,7 +393,7 @@ const GlobalSpotlight = ({
           e.clientX,
           e.clientY,
           glowIntensity,
-          spotlightRadius
+          spotlightRadius,
         );
 
         // Check if mouse is directly over this card for tilt effect
@@ -439,8 +439,8 @@ const GlobalSpotlight = ({
         minDistance <= proximity
           ? 0.8
           : minDistance <= fadeDistance
-          ? ((fadeDistance - minDistance) / (fadeDistance - proximity)) * 0.8
-          : 0;
+            ? ((fadeDistance - minDistance) / (fadeDistance - proximity)) * 0.8
+            : 0;
 
       gsap.to(spotlightRef.current, {
         opacity: targetOpacity,
@@ -563,13 +563,14 @@ const About = () => {
               <img
                 src="/assets/grid1.png"
                 alt="grid-1"
-                className="w-full sm;h-[276px] h-fit object-contain"
+                className="w-full sm:h-[276px] h-fit object-contain"
               />
               <div>
                 <p className="grid-headtext">Hi, I'm Vansh</p>
                 <p className="grid-subtext">
-                  With 1 year of experience, I have honed my skills in frontend
-                  and backend development,with a focus on animated 3D websites.{" "}
+                  With nearly 2 years of experience, I build fast, animated 3D
+                  web experiences, backed by Node.js APIs and Docker-based
+                  deployments.
                 </p>
               </div>
             </div>
@@ -583,12 +584,13 @@ const About = () => {
               <img
                 src="/assets/vssslogo.png"
                 alt="grid-2"
-                className="w-full sm;h-[276px] h-fit object-contain"
+                className="w-full sm:h-[276px] h-fit object-contain"
               />
               <div>
                 <p className="grid-headtext">Tech Stack</p>
                 <p className="grid-subtext">
-                  I specalize in JavaScript with a focus on React ecosystem.
+                  I specialize in JavaScript and TypeScript, with a focus on the
+                  React ecosystem: React, Next.js, and Tailwind.
                 </p>
               </div>
             </div>
@@ -625,7 +627,7 @@ const About = () => {
                   I'm very flexible with time zone communications & locations
                 </p>
                 <p className="grid-subtext">
-                  I&apos;m based in Noida ,India and open to remote work
+                  I&apos;m based in Delhi ,India and open to remote work
                   worldwide.
                 </p>
                 <Button
@@ -645,14 +647,14 @@ const About = () => {
               <img
                 src={"/assets/grid3.png"}
                 alt="grid-3"
-                className="w-full sm;h-[266px] h-fit object-contain"
+                className="w-full sm:h-[266px] h-fit object-contain"
               />
               <div>
                 <p className="grid-headtext">My Passion for coding</p>
                 <p className="grid-subtext">
                   {" "}
                   I love solving problems and building things through code.
-                  Programming isn&apos;t just my profession—it&apos;s my
+                  Programming isn&apos;t just my profession it&apos;s my
                   passion. I enjoy exploring new technologies, and enhancing my
                   skills.
                 </p>
